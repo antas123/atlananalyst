@@ -1,0 +1,41 @@
+
+  /* table.module.css */
+.tablecontainer {
+    max-height: 400px;
+    overflow-y: auto;
+    width: 900px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #61677A;
+    color: white;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #D8D9DA;
+  }
+  .table {
+    width: 100%; /* Change this value to increase the width */
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Adjust the height as needed */
+    font-size: 18px;
+  }
