@@ -21,7 +21,7 @@ Basic overview of project
     4) 14 ms  Painting
     5) 406 ms  System
     6) 1402 ms  Idle
-    7) 2222 ms  Total
+    7) 2222 ms  Total,
    I used performance tab to measure time.
 
  7) though the application is not very heavy but I have used lazy loading to load the predefined SQL query section because among all the components I felt that component had the maximum code to be rendered and potentially more time consuming. 
