@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import styles from "./App.module.css";
 import CSVImporter from "./components/table/CSVImporter";
-import PreDefinedSQL from "./components/PreDefinedSQL";
+// import PreDefinedSQL from "./components/PreDefinedSQL";
 import SQLeditor from "./components/editor/SQLeditor";
 import dummyData from "./data/orders";
 import arr from "./data/Randomarray";
 import Header from "./components/Header";
+const PreDefinedSQL = lazy(() => import("./components/PreDefinedSQL"));
 
 function App() {
   const [randomOrders, setRandomOrders] = useState([]);
@@ -87,15 +88,17 @@ function App() {
   return (
     <div>
       <div className={styles.boxmain} style={colour2}>
-        <div className={styles.box1} style={colour2}>
-          <Header handleColorChange={handleColorChange} />
-          <PreDefinedSQL
-            callArray={callArray}
-            queryHistory={queryHistory}
-            setQueryHistory={queryHistoryUpdateHandler2}
-            copyText={copyText}
-          />
-        </div>
+        <Suspense fallback={<div>Please wait...</div>}>
+          <div className={styles.box1} style={colour2}>
+            <Header handleColorChange={handleColorChange} />
+            <PreDefinedSQL
+              callArray={callArray}
+              queryHistory={queryHistory}
+              setQueryHistory={queryHistoryUpdateHandler2}
+              copyText={copyText}
+            />
+          </div>
+        </Suspense>
         <div className={styles.box2} style={colour}>
           <div className={styles.editor} style={colour}>
             <SQLeditor
